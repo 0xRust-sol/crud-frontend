@@ -10,7 +10,7 @@ function EditModal(props: { setIsEditModal: (t: boolean) => void; setUsers: (dat
 
   const onSave = async () => {
     if (name !== "" && birth !== "") {
-      const res = await axios.post("https://curd-backend-phi.vercel.app//updateOneUser", {
+      const res = await axios.post("https://curd-backend-phi.vercel.app/updateOneUser", {
         id: user._id,
         newName: name,
         newBirth: birth
