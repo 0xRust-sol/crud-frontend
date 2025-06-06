@@ -14,7 +14,7 @@ function Modal(props: { setIsModal: (t: boolean) => void; setUsers: (data: IUser
         birth: birth,
       });
       console.log("response", res );
-      if (res.statusText == "OK") {
+      if (res.status == 200) {
         setUsers(res.data);
         setIsModal(false);
       }
