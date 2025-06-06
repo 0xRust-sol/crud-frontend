@@ -22,7 +22,7 @@ export default function Home() {
   }
   const onDelete = async (id: any) => {
     console.log(id);
-    const res =await axios.get(`https://curd-backend-phi.vercel.app//deleteOneUser/${id}`);
+    const res =await axios.get(`https://curd-backend-phi.vercel.app/deleteOneUser/${id}`);
     console.log("delete",res.data);
     if (res.status == 200) {
       setUsers(res.data);
