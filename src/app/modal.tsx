@@ -9,7 +9,7 @@ function Modal(props: { setIsModal: (t: boolean) => void; setUsers: (data: IUser
 
   const onSave = async () => {
     if (name !== "" && birth !== "") {
-      const res = await axios.post("http://localhost:5000/createNewUser", {
+      const res = await axios.post("https://curd-backend-phi.vercel.app/createNewUser", {
         name: name,
         birth: birth,
       });

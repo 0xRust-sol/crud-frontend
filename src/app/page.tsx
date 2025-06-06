@@ -62,7 +62,7 @@ export default function Home() {
 
   useEffect(() => {
     const getAllUsers = async () => {
-      const res = await axios.get("http://localhost:5000");
+      const res = await axios.get("https://curd-backend-phi.vercel.app/");
       console.log("🚀 ~ getAllUsers ~ res:", res)
       setUsers(res.data)
     }
