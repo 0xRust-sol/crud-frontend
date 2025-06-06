@@ -16,7 +16,7 @@ function EditModal(props: { setIsEditModal: (t: boolean) => void; setUsers: (dat
         newBirth: birth
       });
       console.log("response", res );
-      if (res.statusText == "OK") {
+      if (res.status == 200) {
         setUsers(res.data);
         setIsEditModal(false);
       }
