@@ -53,13 +53,13 @@ function EditModal(props: { setIsEditModal: (t: boolean) => void; setUsers: (dat
         />
       </div>
       <button
-        className="bg-green-300 border-1 px-2 py-1 ml-33 mt-2"
+        className="bg-green-300 border-1 px-2 py-1 ml-33 mt-2 hover:cursor-pointer"
         onClick={onSave}
       >
         Save
       </button>
       <button
-        className="bg-green-300 border-1 px-2 py-1 ml-1 mt-2"
+        className="bg-green-300 border-1 px-2 py-1 ml-1 mt-2 hover:cursor-pointer"
         onClick={onCancel}
       >
         Cancel
