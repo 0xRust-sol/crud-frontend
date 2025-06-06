@@ -27,12 +27,12 @@ export default function Home() {
     console.log(e.target.parentElement.parentElement.children[0].innerHTML);
     const name = e.target.parentElement.parentElement.children[0].innerHTML;
     const birth = e.target.parentElement.parentElement.children[1].innerHTML;
-    const res =await axios.post("http://localhost:5000/deleteOneUser",{
+    const res =await axios.post("https://curd-backend-phi.vercel.app/deleteOneUser",{
       name: name,
       birth: birth
     });
     console.log("delete",res.data);
-    if (res.statusText == "OK") {
+    if (res.status == 200) {
       setUsers(res.data);
     }
   }
