@@ -2,16 +2,16 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { IUser } from "./page";
 
-function EditModal(props: { setIsEditModal: (t: boolean) => void; setUsers: (data: IUser[]) => void; oldName: any; oldBirth: any; }) {
-  const { setIsEditModal, setUsers, oldName, oldBirth } = props;
-  const [name, setName] = useState(oldName);
-  const [birth, setBirth] = useState(oldBirth);
-  console.log("old>>",props.oldName, props.oldBirth);
+function EditModal(props: { setIsEditModal: (t: boolean) => void; setUsers: (data: IUser[]) => void; user: IUser }) {
+  const { setIsEditModal, setUsers, user } = props;
+
+  const [name, setName] = useState(user.name);
+  const [birth, setBirth] = useState(user.birth);
+
   const onSave = async () => {
     if (name !== "" && birth !== "") {
-      const res = await axios.post("https://curd-backend-phi.vercel.app/updateOneUser", {
-        oldName: oldName,
-        oldBirth: oldBirth,
+      const res = await axios.post("https://curd-backend-phi.vercel.app//updateOneUser", {
+        id: user._id,
         newName: name,
         newBirth: birth
       });
